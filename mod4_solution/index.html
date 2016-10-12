@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html ng-app='ShoppingList'>
+<html ng-app='MenuApp'>
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/styles.css">
     <title>No Cookie Shopping List</title>
   </head>
   <body>
-    <h1>Welcome to Premade No Cookie Shopping List</h1>
+    <h1>Welcome to Menu List</h1>
 
     <ui-view></ui-view>
 
@@ -15,16 +15,16 @@
     <script src="lib/angular-ui-router.min.js"></script>
 
     <!-- Modules -->
-    <script src="src/shoppinglist/shoppinglist.module.js"></script>
+    <script src="src/menuapp/menuapp.module.js"></script>
 
     <!-- Routes -->
     <script src="src/routes.js"></script>
 
     <!-- 'ShoppingList' module artifacts -->
-    <script src="src/shoppinglist/shoppinglist.component.js"></script>
-    <script src="src/shoppinglist/main-shoppinglist.controller.js"></script>
-    <script src="src/shoppinglist/shoppinglist.service.js"></script>
-    <script src="src/shoppinglist/item-detail.controller.js"></script>
+    <script src="src/menuapp/categories.component.js"></script>
+    <script src="src/menuapp/categorylist.controller.js"></script>
+    <script src="src/menuapp/dataservice.service.js"></script>
+    <script src="src/shoppinglist/MenuListController.controller.js"></script>
 
   </body>
 </html>
