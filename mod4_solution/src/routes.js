@@ -20,15 +20,15 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
   })
 
   .state('categoryList', {
-    url: '/categorylist',
+    url: '/categoryList',
     templateUrl: 'src/menuapp/templates/main-categorylist.template.html',
-    controller: 'MainCategoryListController as categoryList',
+    controller: 'MainCategoryListController as categoryList'
 
   })
   .state('menuList', {
     url: '/menuList/{categoryShortName}',
     templateUrl: 'src/menuapp/templates/main-menulist.template.html',
-    controller: 'MenuListController as menuList',
+    controller: 'MainMenuListController as menuList',
     resolve: {
       items: ['$stateParams', 'MenuDataService',
               function ($stateParams, MenuDataService) {
