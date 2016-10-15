@@ -13,7 +13,7 @@ function MainCategoryListController(MenuDataService) {
     MenuDataService.getCategories()
     .then(function (result) {
       console.log(result);
-      categoryList.items = result;
+      categoryList.items = result.data;
     });
   };
 }
