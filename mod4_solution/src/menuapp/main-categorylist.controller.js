@@ -5,10 +5,9 @@ angular.module('MenuApp')
 .controller('MainCategoryListController', MainCategoryListController);
 
 
-MainCategoryListController.$inject = ['MenuDataService', 'items'];
-function MainCategoryListController(MenuDataService, items) {
+MainCategoryListController.$inject = ['MenuDataService'];
+function MainCategoryListController(MenuDataService) {
   var categoryList = this;
-  categoryList.items = items;
   categoryList.$onInit = function () {
     MenuDataService.getMenuListForCategory()
     .then(function (result) {
