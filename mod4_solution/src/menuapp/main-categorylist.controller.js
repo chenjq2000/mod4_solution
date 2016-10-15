@@ -5,17 +5,10 @@ angular.module('MenuApp')
 .controller('MainCategoryListController', MainCategoryListController);
 
 
-MainCategoryListController.$inject = ['MenuDataService'];
-function MainCategoryListController(MenuDataService) {
+MainCategoryListController.$inject = ['MenuDataService','items'];
+function MainCategoryListController(MenuDataService, items) {
   var categoryList = this;
-  categoryList.$onInit = function () {
-    console.log("onInit is called");
-    MenuDataService.getCategories()
-    .then(function (result) {
-      console.log(result);
-      categoryList.items = result.data;
-    });
-  };
+  categoryList.items = items;
 }
 
 })();

@@ -22,7 +22,13 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
   .state('categoryList', {
     url: '/categoryList',
     templateUrl: 'src/menuapp/templates/main-categorylist.template.html',
-    controller: 'MainCategoryListController as categoryList'
+    controller: 'MainCategoryListController as categoryList',
+    resolve: {
+      items: ['MenuDataService',
+              function (MenuDataService) {
+        return MenuDataService.getCategories();
+      }]
+    }
 
   })
   .state('menuList', {
