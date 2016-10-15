@@ -16,29 +16,26 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
   // Home page
   .state('home', {
     url: '/',
-    templateUrl: 'src/shoppinglist/templates/home.template.html'
+    templateUrl: 'src/menuapp/templates/home.template.html'
   })
 
-  // Premade list page
-  .state('mainList', {
-    url: '/main-list',
-    templateUrl: 'src/shoppinglist/templates/main-shoppinglist.template.html',
-    controller: 'MainShoppingListController as mainList',
+  .state('categoryList', {
+    url: '/categorylist',
+    templateUrl: 'src/menuapp/templates/main-categorylist.template.html',
+    controller: 'MainCategoryListController as categoryList',
+
+  })
+  .state('menulist', {
+    url: '/menuList/{categoryShortName}',
+    templateUrl: 'src/menuapp/templates/main-menulist.template.html',
+    controller: 'MenuListController as menuList',
     resolve: {
-      items: ['ShoppingListService', function (ShoppingListService) {
-        return ShoppingListService.getItems();
+      items: ['$stateParams', 'MenuDataService',
+              function ($stateParams, MenuDataService) {
+        return MenuDataService.getMenuListForCategory($stateParams.categoryShortName);
       }]
     }
-  })
 
-  // Item detail
-  .state('mainList.itemDetail', {
-    // url: '/item-detail/{itemId}',
-    templateUrl: 'src/shoppinglist/templates/item-detail.template.html',
-    controller: 'ItemDetailController as itemDetail',
-    params: {
-      itemId: null
-    }
   });
 
 }
