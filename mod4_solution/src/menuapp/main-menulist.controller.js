@@ -2,11 +2,11 @@
 'use strict';
 
 angular.module('MenuApp')
-.controller('MenuListController', MenuListController);
+.controller('MainMenuListController', MainMenuListController);
 
 
-MenuListController.$inject = ['MenuDataService', 'items'];
-function MenuListController(MenuDataService, items) {
+MainMenuListController.$inject = ['items'];
+function MainMenuListController(items) {
   var menuList = this;
   menuList.items = items;
 }

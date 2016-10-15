@@ -25,7 +25,7 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
     controller: 'MainCategoryListController as categoryList',
 
   })
-  .state('menulist', {
+  .state('menuList', {
     url: '/menuList/{categoryShortName}',
     templateUrl: 'src/menuapp/templates/main-menulist.template.html',
     controller: 'MenuListController as menuList',
