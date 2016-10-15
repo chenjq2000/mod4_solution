@@ -7,7 +7,7 @@ angular.module('data')
 
 
 MenuDataService.$inject = ['$http', 'ApiBasePath']
-function MenuDataService(($http, ApiBasePath) {
+function MenuDataService($http, ApiBasePath) {
   var service = this;
   service.getCategories = function () {
     return $http({
