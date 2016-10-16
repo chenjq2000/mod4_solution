@@ -1,13 +1,12 @@
 <a ui-sref="home">Home</a> &lt; <span>Category</span>
 
 <h3>Categories</h3>
-<h3>test before</h3>
 <ul>
 
-  <li ng-repeat="item in categoryList.items">
-    1 {{ item.name }}
+  <li ng-repeat="item in categoryList.items" ui-sref="menuList({categoryShortName: item.short_name})">
+    {{ item.name }}
   </li>
 </ul>
-<h3>test after</h3>
+
 
 <h3>Done</h3>
