@@ -1,8 +1,4 @@
 <a ui-sref="home">Home</a> &lt; <a ui-sref="categoryList">Category</a> &lt;<span>Menu</span>
 
 <h3>Menu list</h3>
-<ul>
-  <li ng-repeat="menu in menuList.items">
-     {{ menu.name }}
-  </li>
-</ul>
+<menu-list items="menuList.items"></menu-list>
